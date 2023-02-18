@@ -1,6 +1,8 @@
 import pandas as pd
 import sys
 import subprocess as sp
+import matplotlib.pyplot as plt
+import numpy as np
 sp.call('wget -nc https://data.cdc.gov/api/views/3rge-nu2a/rows.csv',shell=True)
 d=pd.read_csv('rows.csv')
 months=d.month.unique()
@@ -21,15 +23,17 @@ for i in months:
  uwo=d.loc[(d.outcome=='death') & (d['Age group']==age),'Unvaccinated with outcome']
  up=d.loc[(d.outcome=='death') & (d['Age group']==age),'Unvaccinated population']
  u=uwo/up
-days.append("")
-days.append("")
-print(len(days),len(vwo),len(fvp),len(uwo),len(up))
-import matplotlib.pyplot as plt
-import numpy as np
-plt.plot(days,v,'-k')
-plt.plot(days,u,'--k')
-plt.xticks(days[::4],rotation=90)
-plt.legend(('vaccinated','unvaccinated'))
-plt.title('COVID-19 mortality for '+age+' age group')
-plt.savefig(age+'.png',bbox_inches='tight')
-plt.close()
+print(len(days),len(v),len(u))
+def main():
+ plt.plot(range(len(v)),v,'-k')
+ plt.plot(range(len(u)),u,'--k')
+ days.append(" ")
+ days.append(" ")
+ print("days= ",len(days))
+ plt.xticks(np.arange(0,len(days),5),days[::5],rotation=90)
+ plt.legend(('vaccinated','unvaccinated'))
+ plt.title('COVID-19 mortality for '+age+' age group')
+ plt.savefig(age+'.png',bbox_inches='tight')
+ print(age+'.png image file is generated')
+ plt.close()
+main()
