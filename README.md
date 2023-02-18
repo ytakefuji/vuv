@@ -18,4 +18,4 @@ $ vuv 80+
 
 This command generates 80+.png image file.
 
-<img src=https://github.com/ytakefuji/vuv/raw/main/80%2B.png  >
+<img src=https://github.com/ytakefuji/vuv/raw/main/80%2B.png  width=700 height=560>
