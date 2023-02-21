@@ -3,6 +3,8 @@
 
 Takefuji, Y. (2023). vuv: vaccine effects on mortality between fully vaccinated and unvaccinated [Source Code]. https://doi.org/10.24433/CO.1329228.v1
 
+Takefuji Y. (2023). Effectiveness of vaccination with symptoms by age groups. International immunopharmacology, 116, 109823. Advance online publication. https://doi.org/10.1016/j.intimp.2023.109823
+
 vuv is a PyPI application to evaluate the vaccine effects on mortality by age group 
 between fully vaccinated and unvaccinated. 
 CDC dataset is automatically downloaded from the following site:
